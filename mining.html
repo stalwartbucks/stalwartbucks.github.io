@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Stalwartbucks Pool Mining</title>
+<meta name="viewport" content="initial-scale=1.0">
+<meta charset="UTF-8">
+
+<style>
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 600px) {
+	body {
+		margin-left: 15%;
+		margin-right: 15%;		
+	}
+}
+
+p {
+	line-height: 150%;
+}
+
+pre {
+	overflow: wrap;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stalwartbucks Pool Mining</h1>
+
+<p>
+It has already become difficult to solo mine SBX using a CPU. We have set up an <a href="http://pool.stalwartbucks.com/">experimental pool</a>. Hopefully someone with more experience running pools will create alternative pools.
+</p>
+
+<p>
+Set up an account and click on the verification email. Then go to “Add Workers” and create a worker. If your username is <code>foo</code>, a worker name could be <code>bar1</code>. 
+</p>
+
+<p>
+The URL for connecting to the miner is <code>stratum+tcp://pool.stalwartbucks.com:3333</code>. If you use the popular <a href="http://sourceforge.net/projects/cpuminer/">cpuminer</a>, you would invoke it like this:
+</p>
+
+<p><code>./minerd --algo scrypt --url stratum+tcp://pool.stalwartbucks.com:3333 --userpass foo.bar1:password</code></p>
+
+<p>(All in one line.)</p>
+
+<h2>Mac/cpuminer</h2>
+
+<p>If you <a href="http://sourceforge.net/projects/cpuminer/files/latest/download">download cpuminer</a>a> and extract the Zip file (your browser may do this automatically), you will find a file called <code>minerd</code> in your Downloads folder.</p>
+
+<p>Launch a Terminal (in Applications → Utilities) and type in the following:</p>
+
+<p><code>cd ~/Downloads<br>chmod +x ./minerd<br>./minerd --algo scrypt --url stratum+tcp://pool.stalwartbucks.com:3333 --userpass <b>foo</b>.<b>bar1</b>:<b>guanrocks</b></code></p>
+
+<p>If you only want to mine using one thread, you could add <code>--threads=1</code>.</p>
+
+<p>Here’s how it might look:</p>
+
+<p><img src="macmine.png" width="600" height="450"></p>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67966-10', 'stalwartbucks.com');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
