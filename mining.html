@@ -55,13 +55,25 @@ The URL for connecting to the miner is <code>stratum+tcp://pool.stalwartbucks.co
 
 <p>(All in one line.)</p>
 
-<h2>CPU mining on a Mac</h2>
+<!--
+<h2>CPU mining from the wallet</h2>
+
+<p>If you <a href="http://sourceforge.net/projects/cpuminer/files/latest/download">download cpuminer</a> and extract the Zip file (your browser may do this automatically), you will find a file called <code>minerd</code> in your Downloads folder.</p>
+
+<p>First, we need to make it executable. Launch a Terminal (in Applications → Utilities), and type in the following:</p>
+
+<p><code>cd ~/Downloads<br>chmod +x minerd</code></p>
+
+<p>Now pick “Herd Dig” as Type, type in <code>stratum+tcp://pool.stalwartbucks.com</code> in Server,</p>
+-->
+
+<h2>Command line CPU mining on a Mac</h2>
 
 <p>If you <a href="http://sourceforge.net/projects/cpuminer/files/latest/download">download cpuminer</a> and extract the Zip file (your browser may do this automatically), you will find a file called <code>minerd</code> in your Downloads folder.</p>
 
 <p>Launch a Terminal (in Applications → Utilities) and type in the following:</p>
 
-<p><code>cd ~/Downloads<br>chmod +x ./minerd<br>./minerd --algo scrypt --url stratum+tcp://pool.stalwartbucks.com:3333 --userpass <b>foo</b>.<b>bar1</b>:<b>guanrocks</b></code></p>
+<p><code>cd ~/Downloads↩<br>chmod +x ./minerd↩<br>./minerd --algo scrypt --url stratum+tcp://pool.stalwartbucks.com:3333 --userpass <b>foo</b>.<b>bar1</b>:<b>guanrocks</b>↩</code></p>
 
 <p>Replace the parts in red. If you only want to mine using one thread, you could add <code>--threads=1</code>.</p>
 
