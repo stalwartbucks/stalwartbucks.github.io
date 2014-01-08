@@ -31,6 +31,10 @@ pre {
 code b {
 	color: red;
 }
+
+li {
+	margin-bottom: 0.8em;
+}
 </style>
 
 </head>
@@ -55,17 +59,23 @@ The URL for connecting to the miner is <code>stratum+tcp://pool.stalwartbucks.co
 
 <p>(All in one line.)</p>
 
-<!--
-<h2>CPU mining from the wallet</h2>
+<h2>Pool mining with MacMiner</h2>
 
-<p>If you <a href="http://sourceforge.net/projects/cpuminer/files/latest/download">download cpuminer</a> and extract the Zip file (your browser may do this automatically), you will find a file called <code>minerd</code> in your Downloads folder.</p>
+<p><a href="http://fabulouspanda.co.uk/macminer/">MacMiner</a> is graphical interface for a couple of cryptocurrency mining tools, including the fast cpuminer. It works both with Bitcoin and with Litecoin, which uses the same crypto algorithms as Stalwartbucks. Unfortunately it’s very insistent that you mine with their Bitcoin or Litecoin tools. Here’s a way to set it up to mine Stalwartbucks in a pool:</p>
 
-<p>First, we need to make it executable. Launch a Terminal (in Applications → Utilities), and type in the following:</p>
+<ol>
+<li><a href="http://pool.stalwartbucks.com/">Set up an account on the pool</a>. Remember to verify your email address. Check in the spam folder if you can’t find the verification email.</li>
+<li>Go to “My Workers” and add a worker: <p><img src="macminer-1.png" alt="[Screenshot]" width="448" height="382"></p> <p>Your mining password will be <b>username</b>.<b>workername</b>.</li>
+<li><a href="http://fabulouspanda.co.uk/macminer/downloads/">Download MacMiner</a>.</li>
+<li>Launch MacMiner, then click “Show CPUMiner” in the View menu. <p><img src="macminer-2.png" alt="[Screenshot]" width="533" height="192"></p></li>
+<li>Click on the gear button. <p><img src="macminer-3.png" alt="[Screenshot]" width="637" height="379"></p></li>
+<li>You will see the CPU Miner Options window. At the top left, enter the number of threads you want to mine with. It’s probably a good idea to limit it to 1 or 2 threads to avoid heat damage and excessive fan noise. In the “Manual flags:” field, enter this: <pre>--url stratum+tcp://pool.stalwartbucks.com:3333</pre> This is what it would look like:<p><img src="macminer-4.png" width="709" height="194" alt="[Screenshot]"></p></li>
+<li>Now click “Edit pool settings”. Delete the contents of every text field, and enter the information shown below. Replace username with your mining username (actual username dot worker name) and put in the worker password you selected earlier (not the password you use to log on to the pool site!). <p><img src="macminer-5.png" alt="[Screenshot]" width="688" height="564"></p> Click “Save &amp; start”.</li>
+<li>You’ll get this message saying that MacMiner has nonetheless selected its default pool. This is probably not true, but we will double check in a second. <p><img src="macminer-6.png" alt="[Screenshot]" width="447" height="175"></p></li>
+<li>We’ve now started mining. As you can see, it selected the correct pool. <p><img src="macminer-7.png" alt="[Screenshot]" width="643" height="372"></p></li>
+</ol>
 
-<p><code>cd ~/Downloads<br>chmod +x minerd</code></p>
-
-<p>Now pick “Herd Dig” as Type, type in <code>stratum+tcp://pool.stalwartbucks.com</code> in Server,</p>
--->
+<p>If you quit and relaunch MacMiner in the future, remember to select CPU Miner again from the View menu.</p>
 
 <h2>Command line CPU mining on a Mac</h2>
 
@@ -73,9 +83,9 @@ The URL for connecting to the miner is <code>stratum+tcp://pool.stalwartbucks.co
 
 <p>Launch a Terminal (in Applications → Utilities) and type in the following:</p>
 
-<p><code>cd ~/Downloads↩<br>chmod +x ./minerd↩<br>./minerd --algo scrypt --url stratum+tcp://pool.stalwartbucks.com:3333 --userpass <b>foo</b>.<b>bar1</b>:<b>guanrocks</b>↩</code></p>
+<p><code>cd ~/Downloads<br>chmod +x ./minerd<br>./minerd --algo scrypt --url stratum+tcp://pool.stalwartbucks.com:3333 --userpass <b>foo</b>.<b>bar1</b>:<b>guanrocks</b></code></p>
 
-<p>Replace the parts in red. ↩ means the return key. If you only want to mine using one thread, you could add <code>--threads=1</code>.</p>
+<p>Replace the parts in red. If you only want to mine using one thread, you could add <code>--threads=1</code>.</p>
 
 <p>Here’s how it might look:</p>
 
