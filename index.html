@@ -58,6 +58,7 @@ Stalwartbucks is a new cryptocurrency brought to you by <a href="https://twitter
 <li><a href="http://chain.stalwartbucks.com/chain/Stalwartbucks">Blockchain</a></li>
 <li><a href="http://pool.stalwartbucks.com/">Pool</a> (<b>alpha</b>)</li>
 <li><a href="mining.html">Guide to mining with the Pool</a></li>
+<li><a href="http://www.youtube.com/watch?v=OYcfWiNYra0">Getting started with Stalwartbucks on a Mac</a> screencast</li>
 </ul>
 
 <h2>Details</h2>
@@ -76,6 +77,16 @@ Block reward starts at 1,000 trillion SBX (1,000,000 raw coins) for the first 10
 
 <p>
 Premined by the creators, for ~1,500 blocks.
+</p>
+
+<h2>“Out of Sync”</h2>
+
+<p>
+The initial port selection for Stalwartbucks apparently conflicted with KittehCoin, creating some crosstalk between the two block chains. This sometimes caused “Out of Sync” messages to show up in the graphical clients, even when the client was fully synced.
+</p>
+
+<p>
+While we work on a more permanent solution, the latest version of the graphical clients has been set up to only connect on the SBX specific port. You may need to remove your <code>peers.dat</code> file to fully fix the problem. It’s located at <code>$HOME/Library/Application Support/Stalwartbucks</code> on a Mac, <code>~/.stalwartbucks</code> on Linux and <code>%home%\appdata\roaming\stalwartbucks</code> on Windows.
 </p>
 
 <script>
